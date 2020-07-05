@@ -18,9 +18,9 @@ function setup() {
 	world = engine.world;
 
 	packageBody = new paper;
-	trash = new trashcan(680,620,10,70);
-	trash2 = new trashcan(570,620,10,70);
-	trash3 = new trashcan(625,640,110,10);
+	trash = new trashcan(680,610,70,70);
+	
+
 
 	ground = new Ground;
 	
@@ -37,8 +37,7 @@ function draw() {
   Engine.update(engine);
   packageBody.display();
   trash.display();
-  trash2.display();	
-  trash3.display();
+ 
   ground.display();
 
 

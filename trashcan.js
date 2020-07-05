@@ -10,6 +10,7 @@ class trashcan {
         this.body = Bodies.rectangle(x, y, width, height, options );
         this.height = height;
         this.width = width;
+        this.image = loadImage("dustbingreen.png")
         World.add(world,this.body)
     }
     display(){
@@ -17,7 +18,8 @@ class trashcan {
         push();
      
         fill("green");
-      rect(position.x,position.y, this.width, this.height);
+        imageMode(CENTER);
+      image(this.image,position.x,position.y, this.width, this.height);
         pop();
       }
     };

@@ -7,18 +7,23 @@ class paper{
           density: 1.2
 
       }
-      this.body = Matter.Bodies.circle(50 , 620, 25, options );
+      this.image = loadImage("here.png");
+   
+      this.body = Matter.Bodies.circle(50 , 620, 25, options);
 
       World.add(world,this.body)
-      console.log(this.body.position.y);
+      
   }
   display(){
    var pos = this.body.position;
       push();
       translate(pos.x, pos.y);
-      ellipseMode(RADIUS)
+      
       fill("blue");
-    ellipse(0,0,25,25);
+     
+      ellipse(0,0,25,25);
+      imageMode(CENTER);
+      image(this.image,0,0,this.RADIUS);
       pop();
     }
-  };
+  }
