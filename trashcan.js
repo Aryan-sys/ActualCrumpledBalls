@@ -11,15 +11,15 @@ class trashcan {
         this.height = height;
         this.width = width;
         this.image = loadImage("dustbingreen.png")
-        World.add(world,this.body)
+      
     }
     display(){
      var position = this.body.position;
         push();
-     
+
         fill("green");
         imageMode(CENTER);
       image(this.image,position.x,position.y, this.width, this.height);
         pop();
       }
-    };
+    };                                                                                                                                                          

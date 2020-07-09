@@ -2,6 +2,8 @@ class Ground {
     constructor(){
         var options={
             isStatic: true,
+            
+            
 
         }
         this.body = Matter.Bodies.rectangle(200, 650, 2000, 10,options);
