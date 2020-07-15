@@ -1,9 +1,10 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground,trash;
+var packageBody,ground,trash,slingshot;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
+const Constraint = Matter.Constraint;
 
 function preload()
 {
@@ -20,7 +21,7 @@ function setup() {
 	packageBody = new paper;
 	trash = new trashcan(710,580,140,140);
 
-	
+	slingshot = new SlingShot(packageBody.body,{x: 200,y: 100});
 
 	
 
@@ -31,7 +32,8 @@ function setup() {
 	console.log("ih");
     keyPressed();
 }
-
+mouseDragged();
+mouseReleased();
 function draw() {
 	rectMode(CENTER);
 	background(255,0,0);
@@ -44,7 +46,7 @@ function draw() {
  
   packageBody.display();
   ground.display();
- 
+ slingshot.display();
 
   drawSprites();
  
@@ -55,5 +57,10 @@ function keyPressed() {
 		console.log("10");
 	}
 }
-
+function mouseDragged(){
+	Matter.Body.setPosition(bird.body,{x:mouseX , y : mouseY})
+}
+function mouseReleased(){
+	slingshot.fly();
+}
 

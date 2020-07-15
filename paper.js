@@ -1,7 +1,7 @@
 class paper{
   constructor(){
       var options={
-          isStatic: false,
+          isStatic: true,
           restitution : 0,
           friction : 120,
           density: 1.2
@@ -15,10 +15,12 @@ class paper{
       
   }
   display(){
+    
    var pos = this.body.position;
      push();
       translate(pos.x, pos.y);
-      
+      this.body.position.x = mouseX;
+    this.body.position.y = mouseY;
       fill("blue");
      
       console.log(this.body);
